@@ -1,0 +1,15 @@
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\bin\Debug\ControlEscolar.exe.config
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\bin\Debug\ControlEscolar.exe
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\bin\Debug\ControlEscolar.pdb
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.csprojAssemblyReference.cache
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.Form1.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.Properties.Resources.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.csproj.GenerateResource.cache
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.csproj.CoreCompileInputs.cache
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.exe
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.pdb
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.FrmPrincipal.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.frmAlumnos.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.frmMaestros.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.frmAgregarAlumno.resources
+C:\Users\Alejandro bueno\Desktop\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.ActualizarDatosAlumno.resources
