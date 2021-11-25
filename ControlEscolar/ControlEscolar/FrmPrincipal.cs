@@ -43,5 +43,13 @@ namespace ControlEscolar
             formulario.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ListasAlumnos();
+            formulario.Show();
+            this.Close();
+
+        }
     }
 }

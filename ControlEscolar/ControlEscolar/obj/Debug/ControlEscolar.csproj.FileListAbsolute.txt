@@ -28,3 +28,4 @@ C:\Users\Alejandro bueno\Source\Repos\ProyectoControlEscolar\ControlEscolar\Cont
 C:\Users\Alejandro bueno\Source\Repos\ProyectoControlEscolar\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.csproj.CoreCompileInputs.cache
 C:\Users\Alejandro bueno\Source\Repos\ProyectoControlEscolar\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.exe
 C:\Users\Alejandro bueno\Source\Repos\ProyectoControlEscolar\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.pdb
+C:\Users\Alejandro bueno\Source\Repos\ProyectoControlEscolar\ControlEscolar\ControlEscolar\obj\Debug\ControlEscolar.ListasAlumnos.resources

@@ -33,6 +33,7 @@ namespace ControlEscolar
             this.btnAlumnos = new System.Windows.Forms.Button();
             this.btnMaestros = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,11 +79,23 @@ namespace ControlEscolar
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.button1.Location = new System.Drawing.Point(4, 145);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Listas de alumnos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 348);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnMaestros);
             this.Controls.Add(this.btnAlumnos);
@@ -101,5 +114,6 @@ namespace ControlEscolar
         private System.Windows.Forms.Button btnAlumnos;
         private System.Windows.Forms.Button btnMaestros;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button button1;
     }
 }

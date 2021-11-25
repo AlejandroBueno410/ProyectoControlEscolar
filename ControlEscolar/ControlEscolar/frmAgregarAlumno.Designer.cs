@@ -224,6 +224,7 @@ namespace ControlEscolar
             this.cbGrupo.Name = "cbGrupo";
             this.cbGrupo.Size = new System.Drawing.Size(239, 21);
             this.cbGrupo.TabIndex = 20;
+            this.cbGrupo.SelectedIndexChanged += new System.EventHandler(this.cbGrupo_SelectedIndexChanged);
             // 
             // errorEmail
             // 

@@ -163,6 +163,11 @@ namespace ControlEscolar
         {
 
         }
+
+        private void cbGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
