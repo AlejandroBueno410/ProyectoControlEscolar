@@ -37,7 +37,6 @@ namespace ControlEscolar
             this.btnRegresar = new System.Windows.Forms.Button();
             this.txtModificar = new System.Windows.Forms.TextBox();
             this.txtEliminar = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,23 +126,12 @@ namespace ControlEscolar
             this.txtEliminar.TabIndex = 9;
             this.txtEliminar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEliminar_KeyPress);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnBuscar.Location = new System.Drawing.Point(221, 144);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(81, 41);
-            this.btnBuscar.TabIndex = 10;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.txtBuscar.Location = new System.Drawing.Point(29, 151);
+            this.txtBuscar.Location = new System.Drawing.Point(12, 174);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(186, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(263, 26);
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -151,11 +139,11 @@ namespace ControlEscolar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 180);
+            this.label2.Location = new System.Drawing.Point(12, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 13);
+            this.label2.Size = new System.Drawing.Size(192, 13);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Ingrese el nombre o el usuario";
+            this.label2.Text = "Ingrese el nombre o el usuario a buscar";
             // 
             // label3
             // 
@@ -184,7 +172,6 @@ namespace ControlEscolar
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtEliminar);
             this.Controls.Add(this.txtModificar);
             this.Controls.Add(this.btnRegresar);
@@ -212,7 +199,6 @@ namespace ControlEscolar
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.TextBox txtEliminar;
         public System.Windows.Forms.TextBox txtModificar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
