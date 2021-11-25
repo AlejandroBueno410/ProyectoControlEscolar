@@ -59,7 +59,7 @@ namespace ControlEscolar
             // btnMaestros
             // 
             this.btnMaestros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnMaestros.Location = new System.Drawing.Point(192, 69);
+            this.btnMaestros.Location = new System.Drawing.Point(4, 107);
             this.btnMaestros.Name = "btnMaestros";
             this.btnMaestros.Size = new System.Drawing.Size(184, 32);
             this.btnMaestros.TabIndex = 3;

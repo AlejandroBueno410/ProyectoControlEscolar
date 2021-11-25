@@ -24,43 +24,70 @@ namespace ControlEscolar
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-                if (txtUsuario.Text == "" || txtNombre.Text=="" || cbGrupo.Text=="" || txtCorreo.Text=="" || dtFecha.Text=="" || txtCiudad.Text=="" || txtPais.Text=="" || txtEdad.Text=="" )
-                {
-                    MessageBox.Show("faltan datos por llenar");
-                }
-                    else if(email_bien_escrito(txtCorreo.Text)==false){
-                        errorEmail.SetError(txtCorreo, "Ingrese un email valido");
-                        return;
+            if (txtUsuario.Text == "" || txtNombre.Text == "" || cbGrupo.Text == "" || txtCorreo.Text == "" || dtFecha.Text == "" || txtCiudad.Text == "" || txtPais.Text == "" || txtEdad.Text == "" || imgAlumno.Image==null)
+            {
+                MessageBox.Show("faltan datos por llenar");
+            }
+            else if (email_bien_escrito(txtCorreo.Text) == false)
+            {
+                errorEmail.SetError(txtCorreo, "Ingrese un email valido");
+                return;
 
-                    }
-                    else { 
-                    ClAgregarAlumno alumno = new ClAgregarAlumno();
-                    alumno.Usuario = txtUsuario.Text;
-                    alumno.Nombre = txtNombre.Text;
-                    alumno.Grupo = cbGrupo.Text;
-                    alumno.Correo = txtCorreo.Text;
-                    alumno.Fecha = DateTime.Parse(dtFecha.Text);
-                    alumno.Ciudad = txtCiudad.Text;
-                    alumno.Pais = txtPais.Text;
-                    alumno.Edad = int.Parse(txtEdad.Text);
+            }
+            else
+            {
+                ClAgregarAlumno alumno = new ClAgregarAlumno();
+                alumno.Usuario = txtUsuario.Text;
+                alumno.Nombre = txtNombre.Text;
+                alumno.Grupo = cbGrupo.Text;
+                alumno.Correo = txtCorreo.Text;
+                alumno.Fecha = DateTime.Parse(dtFecha.Text);
+                alumno.Ciudad = txtCiudad.Text;
+                alumno.Pais = txtPais.Text;
+                alumno.Edad = int.Parse(txtEdad.Text);
 
-                    ClDatos Datos = new ClDatos();
-                    Datos.AgregarAlumno(alumno);
 
-                    MessageBox.Show("Alumno agregado");
+                string strSql = "Sp_InsertarAlumnos";
+                SqlCommand comando = new SqlCommand(strSql, cn);
+                cn.Open();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Usuario", alumno.Usuario);
+                comando.Parameters.AddWithValue("@Nombre", alumno.Nombre);
+                comando.Parameters.AddWithValue("@Grupo", alumno.Grupo);
+                comando.Parameters.AddWithValue("@CorreoElectronico", alumno.Correo);
+                comando.Parameters.AddWithValue("@Fecha", alumno.Fecha);
+                comando.Parameters.AddWithValue("@Ciudad", alumno.Ciudad);
+                comando.Parameters.AddWithValue("@Pais", alumno.Pais);
+                comando.Parameters.AddWithValue("@Edad", alumno.Edad);
 
-                    txtUsuario.Clear();
-                    txtNombre.Clear();
-                    txtCorreo.Clear();
-                    txtCiudad.Clear();
-                    txtPais.Clear();
-                    txtEdad.Clear();
 
-                    Form formulario = new frmAlumnos();
-                    formulario.Show();
-                    this.Close();
-                }
 
+                // Creando los parámetros necesarios
+                comando.Parameters.Add("@Imagen", System.Data.SqlDbType.Image);
+
+                // Asignando el valor de la imagen
+
+                // Stream usado como buffer
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                imgAlumno.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                comando.Parameters["@Imagen"].Value = ms.GetBuffer();
+
+
+                comando.ExecuteNonQuery();
+                cn.Close();
+
+                MessageBox.Show("Actualizado");
+
+
+
+                Form formulario = new frmAlumnos();
+                formulario.Show();
+                this.Close();
+
+
+
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -117,7 +144,25 @@ namespace ControlEscolar
             }
         }
 
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fo = new OpenFileDialog();
+            DialogResult rs = fo.ShowDialog();
+            if(rs == DialogResult.OK)
+            {
+                imgAlumno.Image = Image.FromFile(fo.FileName);
+            }
+        }
 
+        private void imgAlumno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace ControlEscolar
 {
@@ -29,7 +30,7 @@ namespace ControlEscolar
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "" || txtNombre.Text == "" || cbGrupo.Text == "" || txtCorreo.Text == "" || dtFecha.Text == "" || txtCiudad.Text == "" || txtPais.Text == "" || txtEdad.Text == "")
+            if (txtUsuario.Text == "" || txtNombre.Text == "" || cbGrupo.Text == "" || txtCorreo.Text == "" || dtFecha.Text == "" || txtCiudad.Text == "" || txtPais.Text == "" || txtEdad.Text == "" || imgAlumno.Image==null) 
             {
                 MessageBox.Show("faltan datos por llenar");
             }
@@ -67,6 +68,17 @@ namespace ControlEscolar
                 comando.Parameters.AddWithValue("@Ciudad", alumno.Ciudad);
                 comando.Parameters.AddWithValue("@Pais", alumno.Pais);
                 comando.Parameters.AddWithValue("@Edad", alumno.Edad);
+                // Creando los parámetros necesarios
+                comando.Parameters.Add("@Imagen", System.Data.SqlDbType.Image);
+
+                // Asignando el valor de la imagen
+
+                // Stream usado como buffer
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                imgAlumno.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                comando.Parameters["@Imagen"].Value = ms.GetBuffer();
+
 
 
                 comando.ExecuteNonQuery();
@@ -74,12 +86,7 @@ namespace ControlEscolar
 
                 MessageBox.Show("Actualizado");
 
-                txtUsuario.Clear();
-                txtNombre.Clear();
-                txtCorreo.Clear();
-                txtCiudad.Clear();
-                txtPais.Clear();
-                txtEdad.Clear();
+
 
                 Form formulario = new frmAlumnos();
                 formulario.Show();
@@ -155,7 +162,38 @@ namespace ControlEscolar
             {
                 MessageBox.Show("Este alumno no existe");
             }
-           
+            SqlCommand comando2 = new SqlCommand("Select * from Alumnos where Id=@Id", cn);
+            comando2.Parameters.AddWithValue("@Id", Id);
+
+            SqlDataAdapter dp = new SqlDataAdapter(comando2);
+            DataSet ds = new DataSet("Alumnos");
+
+            byte[] MisDatos = new byte[0];
+
+            dp.Fill(ds, "Alumnos");
+
+            DataRow myRow = ds.Tables["Alumnos"].Rows[0];
+            MisDatos = (byte[])myRow["Imagen"];
+            MemoryStream ms = new MemoryStream(MisDatos);
+            imgAlumno.Image = Image.FromStream(ms);
+
+            cn.Close();
+
+        }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fo = new OpenFileDialog();
+            DialogResult rs = fo.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                imgAlumno.Image = Image.FromFile(fo.FileName);
+            }
+        }
+
+        private void imgAlumno_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

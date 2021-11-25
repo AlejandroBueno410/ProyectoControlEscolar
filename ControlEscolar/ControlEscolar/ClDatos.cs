@@ -15,6 +15,7 @@ namespace ControlEscolar
         public void AgregarAlumno(ClAgregarAlumno alumno)
         {
             string strSql = "Sp_InsertarAlumnos";
+
             SqlCommand comando = new SqlCommand(strSql, cn);
             cn.Open();
             comando.CommandType = CommandType.StoredProcedure;
@@ -26,6 +27,7 @@ namespace ControlEscolar
             comando.Parameters.AddWithValue("@Ciudad", alumno.Ciudad);
             comando.Parameters.AddWithValue("@Pais", alumno.Pais);
             comando.Parameters.AddWithValue("@Edad", alumno.Edad);
+
 
 
             comando.ExecuteNonQuery();

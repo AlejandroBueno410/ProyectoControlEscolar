@@ -160,11 +160,6 @@ namespace ControlEscolar
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
 

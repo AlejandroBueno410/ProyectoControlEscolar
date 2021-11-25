@@ -53,7 +53,10 @@ namespace ControlEscolar
             this.txtId = new System.Windows.Forms.TextBox();
             this.errorEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.imgAlumno = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlumno)).BeginInit();
             this.SuspendLayout();
             // 
             // cbGrupo
@@ -217,7 +220,7 @@ namespace ControlEscolar
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label1.Location = new System.Drawing.Point(150, 12);
+            this.label1.Location = new System.Drawing.Point(215, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 26);
             this.label1.TabIndex = 21;
@@ -254,11 +257,33 @@ namespace ControlEscolar
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // btnFoto
+            // 
+            this.btnFoto.Location = new System.Drawing.Point(482, 336);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(149, 23);
+            this.btnFoto.TabIndex = 44;
+            this.btnFoto.Text = "Foto";
+            this.btnFoto.UseVisualStyleBackColor = true;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
+            // 
+            // imgAlumno
+            // 
+            this.imgAlumno.Location = new System.Drawing.Point(451, 115);
+            this.imgAlumno.Name = "imgAlumno";
+            this.imgAlumno.Size = new System.Drawing.Size(212, 199);
+            this.imgAlumno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgAlumno.TabIndex = 43;
+            this.imgAlumno.TabStop = false;
+            this.imgAlumno.Click += new System.EventHandler(this.imgAlumno_Click);
+            // 
             // ActualizarDatosAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 450);
+            this.ClientSize = new System.Drawing.Size(675, 450);
+            this.Controls.Add(this.btnFoto);
+            this.Controls.Add(this.imgAlumno);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtId);
@@ -285,6 +310,7 @@ namespace ControlEscolar
             this.Text = "ActualizarDatosAlumno";
             this.Load += new System.EventHandler(this.ActualizarDatosAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAlumno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +342,7 @@ namespace ControlEscolar
         private System.Windows.Forms.ErrorProvider errorEmail;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnCargar2;
-
+        private System.Windows.Forms.Button btnFoto;
+        private System.Windows.Forms.PictureBox imgAlumno;
     }
 }
