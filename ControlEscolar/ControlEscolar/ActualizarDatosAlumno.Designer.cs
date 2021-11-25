@@ -315,5 +315,7 @@ namespace ControlEscolar
         public System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ErrorProvider errorEmail;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnCargar2;
+
     }
 }
