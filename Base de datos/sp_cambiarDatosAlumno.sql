@@ -4,9 +4,9 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE sp_ModificarDatos
+Create PROCEDURE sp_ModificarDatos
 	@Id int, @Usuario varchar(30), @Nombre varchar(40), @Grupo varchar(15), @CorreoElectronico varchar(50), @Fecha date,
-		@Ciudad varchar(30), @Pais varchar(30),@Edad int
+		@Ciudad varchar(30), @Pais varchar(30),@Edad int, @Imagen image
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -14,6 +14,10 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-		update Alumnos set Usuario=@Usuario, Nombre=@Nombre, Grupo=@Grupo, CorreoElectronico=@CorreoElectronico, FechaNacimiento=@Fecha, Ciudad=@Ciudad, Pais=@Pais, Edad=@Edad where Id=@Id
+		update Alumnos set Usuario=@Usuario, Nombre=@Nombre, Grupo=@Grupo, CorreoElectronico=@CorreoElectronico, FechaNacimiento=@Fecha, Ciudad=@Ciudad, Pais=@Pais, Edad=@Edad, Imagen=@Imagen where Id=@Id
 	END
+
+
+
+
 GO
