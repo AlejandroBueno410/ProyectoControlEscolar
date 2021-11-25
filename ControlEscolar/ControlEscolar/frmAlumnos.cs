@@ -154,5 +154,35 @@ namespace ControlEscolar
                 return;
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+                string strSql = "sp_BuscadorAlumno";
+                SqlCommand comando = new SqlCommand(strSql, cn);
+                cn.Open();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Buscar", txtBuscar.Text);
+                comando.ExecuteNonQuery();
+
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dgAlumnos.DataSource = tabla;
+                cn.Close();
+
+            
+        }
     }
 }
